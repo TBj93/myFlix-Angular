@@ -9,7 +9,7 @@ const apiUrl = 'https://tims-movie-api.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
-const err = new Error('test'); throwError(() => err);
+
 
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
@@ -141,22 +141,23 @@ export class FetchApiDataService {
 
 
 // Non-typed response extraction
-  private extractResponseData(res: Response): any {
-    const body = res;
-    return body || { };
-  }
-
+private extractResponseData(res: any): any {
+  const body = res;
+  return body || {};
+}
 
 
 private handleError(error: HttpErrorResponse): any {
-    if (error.error instanceof ErrorEvent) {
-    console.error('Some error occurred:', error.error.message);
-    } else {
+  if (error.error instanceof ErrorEvent) {
+    console.error('Some error occured:', error.error.message);
+  } else {
     console.error(
-        `Error Status code ${error.status}, ` +
-        `Error body is: ${error.error}`);
-    }
-    return throwError(
-    'Something bad happened; please try again later.');
+      `Error Status code ${error.status}, ` +
+      `Error Body is: ${error.error}`
+    );
   }
+  return throwError(
+    'Something bad happened; please try again later.'
+  );
+}
 }
