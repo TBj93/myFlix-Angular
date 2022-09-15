@@ -34,6 +34,9 @@ loginUser(): void {
   // Logic for a successful user registration goes here! (To be implemented)
      this.dialogRef.close(); // This will close the modal on success!
      console.log(result);
+     // Add token and username to local Storage
+     localStorage.setItem('token', result.token);
+     localStorage.setItem('user', result.user.Username);
      this.snackBar.open(result, 'OK', {
         duration: 2000
      });
