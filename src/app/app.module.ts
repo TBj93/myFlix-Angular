@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
+import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +41,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
+    MatIconModule ,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
