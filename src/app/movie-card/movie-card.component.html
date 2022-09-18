@@ -2,11 +2,25 @@
 mat-button
 color="primary"
 
-(click)="goToProfile()"
+
 >
 User Profile
 </button>
 
+<button
+mat-button
+color="primary"
+
+
+>
+Logout
+<mat-icon>logout
+
+   
+</mat-icon>
+
+
+</button>
 <div style="display: flex;">
 
     
@@ -37,7 +51,9 @@ User Profile
             >
                 Synopsis
             </button>
-            <mat-icon>favorite_border</mat-icon>
+            <button mat-mini-fab color="basic" aria-label="add to favs">
+                <mat-icon color="accent">favorite_border</mat-icon>
+              </button>
         </mat-card-actions>
     </mat-card>
 </div>
