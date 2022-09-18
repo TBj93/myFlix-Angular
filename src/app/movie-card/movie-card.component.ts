@@ -21,6 +21,10 @@ ngOnInit(): void {
 goToProfile(): void {
   this.router.navigate(['profile']);
 }
+logout(): void {
+  localStorage.clear;
+  this.router.navigate(['welcome']);
+}
 
 getMovies(): void {
   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
