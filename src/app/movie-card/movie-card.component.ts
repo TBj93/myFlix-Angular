@@ -12,6 +12,8 @@ import { MatDialog} from '@angular/material/dialog';
 })
 export class MovieCardComponent {
   movies: any[] = [];
+  favmovies: any[] = [];
+
   constructor(public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
     private router: Router) { }
@@ -25,11 +27,13 @@ export class MovieCardComponent {
               birth: birth 
 
     },
-            width: '280px'
+            width: '50%',
+            height: '40%'
             });
           } 
 ngOnInit(): void {
   this.getMovies();
+  this.getFavmovies();
 }
 
 goToProfile(): void {
@@ -47,4 +51,19 @@ getMovies(): void {
       return this.movies;
     });
   }
+
+getFavmovies(): void  {
+this.fetchApiData.getUserFavMovie().subscribe((resp:any) => {
+this.favmovies =resp;
+console.log(this.favmovies);
+return this.favmovies;
+
+}
+);
+}
+
+isInFavmovies(_id: string): boolean {
+  return this.favmovies.includes(_id) 
+}
+
 }

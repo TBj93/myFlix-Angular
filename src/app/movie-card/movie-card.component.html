@@ -53,9 +53,18 @@ Logout
             >
                 Synopsis
             </button>
-            <button mat-mini-fab color="basic" aria-label="add to favs">
-                <mat-icon color="accent">favorite_border</mat-icon>
+
+            <mat-card >
+
+            <button mat-icon-button
+            *ngIf="isInFavmovies(movie._id)"
+             color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
               </button>
+              <button [hidden] mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite_border</mat-icon>
+              </button>
+            </mat-card>
         </mat-card-actions>
     </mat-card>
 </div>
