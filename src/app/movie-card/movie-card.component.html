@@ -42,6 +42,7 @@ Logout
             </button>
             <button
                 mat-button
+                (click)="openDirectorDialog(movie.director.name, movie.director.bio, movie.director.birth)"
                 color="primary"
             >
                 Director
