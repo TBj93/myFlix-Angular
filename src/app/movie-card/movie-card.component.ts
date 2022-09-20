@@ -70,11 +70,14 @@ isInFavmovies(_id: string): boolean {
   return this.favmovies.includes(_id) 
 }
 addToFavs(_id: string): void {
-this.fetchApiData.addFavMovie(this.movies);
-console.log(this.favmovies);
+  
+this.fetchApiData.addFavMovie(_id).subscribe((result) => {
+  
+  this.ngOnInit();
+})
+
 
 }
-
 
 }
 
