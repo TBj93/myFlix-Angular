@@ -58,7 +58,9 @@ Logout
 
             <button mat-icon-button
             *ngIf="isInFavmovies(movie._id)"
-             color="warn" aria-label="Example icon button with a heart icon">
+             color="warn" aria-label="Example icon button with a heart icon"
+             (click)="removeFromFavs(movie._id)"
+             >
                 <mat-icon>favorite</mat-icon>
               </button>
               <button mat-icon-button

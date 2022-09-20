@@ -131,13 +131,14 @@ export class FetchApiDataService {
     catchError(this.handleError)
     );
   }
-  removeFavMovie(FavMovie: any): Observable<any> {
+  removeFavMovie(ID: string): Observable<any> {
     const token = localStorage.getItem('token');
-    console.log(FavMovie);
-    return this.http.post(apiUrl + ':Username/remove/:movieid', FavMovie, {headers: new HttpHeaders(
+    const user = localStorage.getItem('user');
+    return this.http.delete(apiUrl + `${user}/remove/${ID}`,   {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
+        map(this.extractResponseData),
     catchError(this.handleError)
     );
   }

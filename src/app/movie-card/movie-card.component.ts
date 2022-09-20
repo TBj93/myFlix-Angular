@@ -79,5 +79,16 @@ this.fetchApiData.addFavMovie(_id).subscribe((result) => {
 
 }
 
+removeFromFavs(_id: string): void {
+  
+  this.fetchApiData.removeFavMovie(_id).subscribe((result) => {
+    
+    this.ngOnInit();
+  })
+  
+  
+  }
+
+
 }
 
