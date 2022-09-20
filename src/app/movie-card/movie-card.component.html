@@ -61,9 +61,14 @@ Logout
              color="warn" aria-label="Example icon button with a heart icon">
                 <mat-icon>favorite</mat-icon>
               </button>
-              <button [hidden] mat-icon-button color="basic" aria-label="Example icon button with a heart icon">
-                <mat-icon>favorite_border</mat-icon>
-              </button>
+              <button mat-icon-button
+              *ngIf="!(isInFavmovies(movie._id))"
+               color="warn" aria-label="Example icon button with a heart icon"
+               (click)="addToFavs(movie._id)"
+               >
+               
+                  <mat-icon>favorite_border</mat-icon>
+                </button>
             </mat-card>
         </mat-card-actions>
     </mat-card>

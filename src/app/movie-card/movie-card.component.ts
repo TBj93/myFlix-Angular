@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service'
 import { Router } from '@angular/router';
 import { DirectorComponent } from '../director/director.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
+import { GenreComponent } from '../genre/genre.component';
 import { MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -31,6 +33,8 @@ export class MovieCardComponent {
             height: '40%'
             });
           } 
+
+
 ngOnInit(): void {
   this.getMovies();
   this.getFavmovies();
@@ -65,5 +69,12 @@ return this.favmovies;
 isInFavmovies(_id: string): boolean {
   return this.favmovies.includes(_id) 
 }
+addToFavs(_id: string): void {
+this.fetchApiData.addFavMovie(this.movies);
+console.log(this.favmovies);
 
 }
+
+
+}
+
