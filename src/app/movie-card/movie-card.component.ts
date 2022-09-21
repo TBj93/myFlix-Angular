@@ -34,6 +34,32 @@ export class MovieCardComponent {
             });
           } 
 
+          openGenreDialog(name: string, description: string): void {
+      
+            this.dialog.open(GenreComponent, {
+              // Assigning the dialog a width
+           data:{   name: name,
+            description: description
+      
+          },
+                  width: '50%',
+                  height: '40%'
+                  });
+                } 
+
+                openSynopsisDialog(title: string, description: string): void {
+      
+                  this.dialog.open(SynopsisComponent, {
+                    // Assigning the dialog a width
+                 data:{   title: title,
+                          description: description
+            
+                },
+                        width: '50%',
+                        height: '40%'
+                        });
+                      } 
+
 
 ngOnInit(): void {
   this.getMovies();

@@ -1,16 +1,11 @@
 // src/app/user-registration-form/user-registration-form.component.ts
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 // You'll use this import to close the dialog on success
-import { MatDialogRef } from '@angular/material/dialog';
-import { MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-// This import brings in the API calls we created in 6.2
-import { FetchApiDataService } from '../fetch-api-data.service';
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-// This import is used to display notifications back to the user
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MovieCardComponent } from '../movie-card/movie-card.component';
+
 @Component({
   selector: 'app-director',
   templateUrl: './director.component.html',
