@@ -48,7 +48,7 @@ loginUser(): void {
      // Add token and username to local Storage
      localStorage.setItem('token', result.token);
      localStorage.setItem('user', result.user.Username);
-     this.snackBar.open(result, 'OK', {
+     this.snackBar.open(result.user.Username, 'logged in!', {
         duration: 2000
      });
      this.router.navigate(['movies']);

@@ -1,24 +1,46 @@
-<div class="main-page">
-    <h1>
+<div class="main-page" style="text-align:center; margin-top:10%">
+    <h1
+    
+    style="margin-bottom:10%; 
+     font-size: 40px;
+    font-family: 'Times New Roman', sans-serif; 
+    color: darkred;
+    size: 20%;
+    
+    "
+    
+    >
       Welcome to myFlix!
     </h1>
     <button
       mat-raised-button
   
       (click)="openUserRegistrationDialog()"
-      style="margin-right: 10px;"
+      style="margin-right: 10px;
+      width: 15%;
+      height: 10%;
+      "
       color="primary"
     >
       Sign Up
+      <mat-icon>
+        assignment
+      </mat-icon>
     </button>
     <button
       mat-raised-button
   
       (click)="openUserLoginDialog()"
-      style="margin-right: 10px;"
+      style="margin-right: 10px;
+      width: 15%;
+      height: 10%;
+      "
       color="primary"
     >
       Login
+      <mat-icon>
+        login
+      </mat-icon>
     </button>
   
   
