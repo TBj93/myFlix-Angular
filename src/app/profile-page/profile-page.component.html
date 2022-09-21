@@ -10,4 +10,97 @@ arrow_back
 </mat-icon>
 
 </button>
-<p>profile-page works!</p>
+
+<h1
+    
+    style="margin-bottom:5%; 
+     font-size: 40px;
+    font-family: 'Times New Roman', sans-serif; 
+    color: darkred;
+    size: 20%;
+    "
+     >
+    Your Profile</h1>
+
+<h2>{{user.Username}}</h2>
+<h2>{{user.Email}}</h2>
+<h2>{{user.Birthday | date}}</h2>
+
+
+<mat-card>
+
+<mat-card-content>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.Username"
+          placeholder="Username"
+          type="text"
+          name="Username"
+          required
+        >
+        
+        </mat-form-field>
+
+        <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="userData.Password"
+              type = "password"
+              placeholder="Password"
+              name="Password"
+              required
+            >
+          </mat-form-field>
+
+
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.Email"
+          type = "email"
+          placeholder="Email"
+          name="Email"
+          required
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.Birthday"
+          type = "date"
+          placeholder="Birthday"  
+          name="Birthday"
+        >
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+
+<button
+                mat-button
+                (click)="editAccount()"
+                color="primary"
+            >
+                Update Account
+                <mat-icon>
+                    edit
+                    </mat-icon>
+            </button>
+
+
+<button
+                mat-button
+                (click)="deleteAccount(user)"
+                color="primary"
+            >
+                Delete Account
+                <mat-icon>
+                    delete
+                    </mat-icon>
+            </button>
+
+            

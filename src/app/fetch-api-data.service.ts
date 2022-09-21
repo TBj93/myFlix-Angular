@@ -30,6 +30,18 @@ export class FetchApiDataService {
     );
   }
 
+  getUser(): Observable<any> {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + `users/${user}`, {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
   userDelete(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
@@ -38,17 +50,20 @@ export class FetchApiDataService {
         Authorization: 'Bearer ' + token,
       })}
     ).pipe(
+      map(this.extractResponseData),
     catchError(this.handleError)
     );
   }
   userEdit(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    return this.http.put(apiUrl + `update/${user}`, userDetails, {headers: new HttpHeaders(
+    console.log(userDetails);
+    return this.http.put(apiUrl + `update/${user}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}
     ).pipe(
+      map(this.extractResponseData),
     catchError(this.handleError)
     );
   }
@@ -96,17 +111,7 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );
   }
-  getUser(): Observable<any> {
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + `users/${user}`, {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
+  
   getUserFavMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
