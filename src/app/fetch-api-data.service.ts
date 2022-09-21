@@ -54,19 +54,22 @@ export class FetchApiDataService {
     catchError(this.handleError)
     );
   }
+
   userEdit(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    console.log(userDetails);
-    return this.http.put(apiUrl + `update/${user}`, {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}
-    ).pipe(
-      map(this.extractResponseData),
-    catchError(this.handleError)
+    return this.http.put(apiUrl + `update/${user}`, userDetails, {
+      headers: new HttpHeaders(
+        {
+          Authorization: 'Bearer ' + token,
+        })
+    }).pipe(
+      
+      catchError(this.handleError)
     );
   }
+
+
 
 
 

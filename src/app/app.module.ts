@@ -23,6 +23,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     DirectorComponent,
     GenreComponent,
     SynopsisComponent,
+    ProfileEditComponent,
   
   ],
 
