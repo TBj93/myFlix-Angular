@@ -23,6 +23,12 @@ export class ProfileEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   *  Update Account 
+   * @function userEdit
+   * @param this.userData
+   * @returns Account objcect
+   */
   UpdateAccount(): void {
     this.fetchApiData
       .userEdit(this.userData)

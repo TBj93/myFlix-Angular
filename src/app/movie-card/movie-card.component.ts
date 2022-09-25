@@ -23,6 +23,14 @@ export class MovieCardComponent {
     public dialog: MatDialog,
     private router: Router) { }
 
+
+ /**
+   * Open Director Dialog
+   * @param name 
+   * @param bio
+   * @param birth
+   * @returns director dobject
+   */
     openDirectorDialog(name: string, bio: string, birth: Date): void {
       
       this.dialog.open(DirectorComponent, {
@@ -37,6 +45,12 @@ export class MovieCardComponent {
             });
           } 
 
+ /**
+   * Open Genre Dialog
+   * @param name 
+   * @param description
+   * @returns genre objcect
+   */
           openGenreDialog(name: string, description: string): void {
       
             this.dialog.open(GenreComponent, {
@@ -50,6 +64,12 @@ export class MovieCardComponent {
                   });
                 } 
 
+ /**
+   * Open Synopsis Dialog
+   * @param title
+   * @param description
+   * @returns synopsis objcect
+   */
                 openSynopsisDialog(title: string, description: string): void {
       
                   this.dialog.open(SynopsisComponent, {
@@ -64,19 +84,41 @@ export class MovieCardComponent {
                       } 
 
 
+    /**
+   * initializes get movie functions
+   * @function getMovies
+   * @function getFavmovies
+   */
 ngOnInit(): void {
   this.getMovies();
   this.getFavmovies();
  
 }
 
+  /**
+   * route to profile page
+   * @route profile
+   */
 goToProfile(): void {
   this.router.navigate(['profile']);
 }
+/**
+   * route to welcome page/ logout
+   * @route welcome
+   */
 logout(): void {
   localStorage.clear;
   this.router.navigate(['welcome']);
 }
+
+
+
+
+  /**
+   *  list of movies. sets movies state to the JSON file returned 
+   * @function getMovies
+   * @returns array with all movies objects 
+   */
 
 getMovies(): void {
   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
@@ -86,6 +128,12 @@ getMovies(): void {
     });
   }
 
+  
+  /**
+   *  list of favmovies. sets  favmovies state to the JSON file returned 
+   * @function getFavmovies
+   * @returns array with all favmovies objects 
+   */
 getFavmovies(): void  {
 this.fetchApiData.getUserFavMovie().subscribe((resp:any) => {
 this.favmovies =resp;
@@ -95,10 +143,21 @@ return this.favmovies;
 }
 );
 }
-
+  
+  /**
+   *  checks if movie is in favmovie list
+   * @param _id
+   * @returns boolean
+   */
 isInFavmovies(_id: string): boolean {
   return this.favmovies.includes(_id) 
 }
+
+  /**
+   *  adds movie to favmovies
+    * @param _id
+   * @function addFavMovie
+   */
 addToFavs(_id: string): void {
   
 this.fetchApiData.addFavMovie(_id).subscribe((result) => {
@@ -109,6 +168,11 @@ this.fetchApiData.addFavMovie(_id).subscribe((result) => {
 
 }
 
+ /**
+   *  adds movie to favmovies
+    * @param _id
+   * @function removeFavMovie
+   */
 removeFromFavs(_id: string): void {
   
   this.fetchApiData.removeFavMovie(_id).subscribe((result) => {

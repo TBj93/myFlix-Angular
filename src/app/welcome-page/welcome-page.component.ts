@@ -22,12 +22,21 @@ export class WelcomePageComponent implements OnInit {
   
   ngOnInit(): void {
   }
+  /**
+   * Open UserRegistration Dialog
+   * @returns Registration objcect
+   */
   openUserRegistrationDialog(): void {
       this.dialog.open(UserRegistrationFormComponent, {
   // Assigning the dialog a width
       width: '280px'
       });
     }
+
+      /**
+   * Open UserLogin Dialog
+   * @returns Login objcect
+   */
     openUserLoginDialog(): void {
       this.dialog.open(UserLoginFormComponent, {
   // Assigning the dialog a width

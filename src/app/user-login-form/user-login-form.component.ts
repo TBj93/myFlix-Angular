@@ -39,7 +39,12 @@ ngOnInit(): void {
 loginUser(): void {
  
 
-  
+  /**
+   *  Login
+   * @function userLogin
+   * @param this.userData
+   * @returns result
+   */
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
 
   // Logic for a successful user registration goes here! (To be implemented)

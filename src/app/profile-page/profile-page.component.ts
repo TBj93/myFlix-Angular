@@ -25,11 +25,20 @@ export class ProfilePageComponent implements OnInit {
     public snackBar: MatSnackBar,
     private router: Router) { }
 
+ /**
+   * initializes get user functions
+   * @function getUserData
+   */
     ngOnInit(): void {
       this.getUserData();
 
     }
 
+ /**
+   * get user data as JSON object
+   * @returns user object
+   * @function getUser
+   */
   getUserData(): void{
   this.fetchApiData.getUser().subscribe((resp: any) => {
     this.user = resp;
@@ -38,7 +47,11 @@ export class ProfilePageComponent implements OnInit {
   });
   }
 
- 
+ /**
+   * delete user data 
+   * @param user
+   * @function userDelete
+   */
  deleteAccount(user: any): void {
  this.fetchApiData.userDelete().subscribe((result) => {
   
@@ -48,18 +61,19 @@ export class ProfilePageComponent implements OnInit {
 })
 this.router.navigate(['welcome'])
  }
-
-
- 
-
-
+ /**
+   * Open Update Account Dialog
+   * @returns Account objcect
+   */
   openUpdateAccountDialog(): void {
     this.dialog.open(ProfileEditComponent, {
       width: '300px',
     });
   }
-
-
+  /**
+   * route to movies page
+   * @route movies
+   */
   goBack(): void {
     this.router.navigate(['movies']);
   }
