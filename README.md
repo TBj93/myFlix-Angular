@@ -15,6 +15,7 @@ See [React client](https://github.com/TBj93/myflix-client/tree/myflix-redux)
 I had to look thorugh the Angular documentation to solve a problem regarding data transfer between components. Found the Mat_dialog_data injections and solved it.
 Also, I had no explicit function on my API hosted on heroku, for loading favmovies from a user. Besides adjusting that, I also updated my cors policies on the backend.
 
+![img](https://github.com/TBj93/myFlix-Angular/blob/master/demo%20imgs/angular-demo2.PNG?raw=true)
 
 ## Development server
 
@@ -39,4 +40,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-![img](https://github.com/TBj93/myFlix-Angular/blob/master/demo%20imgs/angular-demo2.PNG?raw=true)
+
