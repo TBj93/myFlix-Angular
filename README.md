@@ -1,6 +1,9 @@
 # MyFlixAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+Similar to the [React client](https://github.com/TBj93/myflix-client/tree/myflix-redux), this angular client fetches data from the mongoDB database on atlas and uses the API hosted on heroku to register user, login, get movie data etc. 
+![img](https://github.com/TBj93/myFlix-Angular/blob/master/demo%20imgs/angular-demo.PNG?raw=true)
+
 
 ## Development server
 
