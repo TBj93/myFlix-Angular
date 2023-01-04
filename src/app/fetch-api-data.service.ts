@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 
 
 
-const apiUrl = 'https://tims-movie-api.herokuapp.com/';
+const apiUrl = 'https://tims-movie-api.onrender.com/';
 @Injectable({
   providedIn: 'root'
 })
